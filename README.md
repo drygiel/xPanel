@@ -1,4 +1,4 @@
-xPanel
+xPanel.js
 ======
 xPanel is waypoint shortcut used to create paralax effect while scrolling panels.
 
@@ -12,14 +12,16 @@ Here are a few examples:
 
 ## Installation
 
-1. Include the [waypoints](http://imakewebthings.com/jquery-waypoints/) plugin.
-2. Include the CSS stylesheet at the end of **HEAD** element:
-```html
-<link rel="stylesheet" href="/path/to/xpanel.css" />
-```                
-3. Include the shortcut script at the end of **BODY** element:                
+- Include the [waypoints](http://imakewebthings.com/jquery-waypoints/) plugin.
+- Include the CSS stylesheet at the end of **HEAD** element:
+
 	```html
-	<script src="/path/to/waypoints-xpanel.min.js"></script>
+	<link rel="stylesheet" href="/path/to/xpanel.css" />
+	```            
+- Include the shortcut script at the end of **BODY** element:
+	
+	```html
+	<script src="/path/to/waypoints-xpanel.js"></script>
 	```
 
 ## Usage
@@ -42,17 +44,20 @@ Thats all what JS do. Rest of fun is made by CSS.
 
 After applying the schortcut you can:
 
--	Destroy it:
+-	Destroy it:  
+
 	```js                     
 	$('.container-of-panels').waypoint('xpanel', 'destroy');
 	```
-                    
--	Manually refresh it:    
+	
+-	Manually refresh it:  
+
 	```js
 	$('.container-of-panels').waypoint('xpanel', 'refresh');
 	```
-                    
--	Change options of it:
+	
+-	Change options of it:  
+
 	```js             
 	$('.container-of-panels').waypoint('xpanel', {
 		minHeightScale: 1.05,
@@ -66,26 +71,26 @@ After applying the schortcut you can:
 	```
 
 ## Options
--	**minHeightScale**
-	Minimum height of panel in relation to viewport. 1 means 100% of viewport, 1.5 means 150% of viewport and so on.
+- **minHeightScale**   
+ Minimum height of panel in relation to viewport. 1 means 100% of viewport, 1.5 means 150% of viewport and so on.
 
--	**fixJumpyScrolling**
-	Scrolling using mousewheel is not smooth in all browsers thus if you want avoid situation when incoming panels jumps into view leave this this option set to true.
+- **fixJumpyScrolling**  
+  Scrolling using mousewheel is not smooth in all browsers thus if you want avoid situation when incoming panels jumps into view leave this this option set to true.
 
--	**reverse**
-	By default incoming panels appears in viewport below the outcvoming ones. If you want to apear them above, set it to true.
+- **reverse**  
+  By default incoming panels appears in viewport below the outcvoming ones. If you want to apear them above, set it to true.
 
--	**shadow**
-	Adds shadow to the panels.
+- **shadow**  
+  Adds shadow to the panels.
 
--	**dim**
-	Makes outoming panels darker.
+- **dim**  
+  Makes outoming panels darker.
 
--	**whenScrollDown**
-	Enables plugin when scrolling down.
+- **whenScrollDown**  
+  Enables plugin when scrolling down.
 
--	**whenScrollUp**
-	Enables plugin when scrolling up.
+- **whenScrollUp**  
+  Enables plugin when scrolling up.
 
 
 If you to temporary disable shortcut set both opctions whenScrollDown & whenScrollUp to false.
