@@ -1,0 +1,147 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>xPanel by drygiel</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="stylesheets/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  </head>
+  <body>
+      <div id="header">
+        <nav>
+          <li class="fork"><a href="https://github.com/drygiel/xPanel">View On GitHub</a></li>
+          <li class="downloads"><a href="https://github.com/drygiel/xPanel/zipball/master">ZIP</a></li>
+          <li class="downloads"><a href="https://github.com/drygiel/xPanel/tarball/master">TAR</a></li>
+          <li class="title">DOWNLOADS</li>
+        </nav>
+      </div><!-- end header -->
+
+    <div class="wrapper">
+
+      <section>
+        <div id="title">
+          <h1>xPanel</h1>
+          <p>xPanel is waypoint shortcut used to create paralax effect while scrolling panels.</p>
+          <hr>
+          <span class="credits left">Project maintained by <a href="https://github.com/drygiel">drygiel</a></span>
+          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></span>
+        </div>
+
+        <h1>
+<a name="xpaneljs" class="anchor" href="#xpaneljs"><span class="octicon octicon-link"></span></a>xPanel.js</h1>
+
+<p>xPanel is waypoint shortcut used to create paralax effect while scrolling panels.</p>
+
+<h2>
+<a name="examples" class="anchor" href="#examples"><span class="octicon octicon-link"></span></a>Examples</h2>
+
+<p>Here are a few examples:</p>
+
+<ul>
+<li><a href="http://rawgithub.com/drygiel/xPanel/master/examples/settings.html">Settings</a></li>
+<li><a href="http://rawgithub.com/drygiel/xPanel/master/examples/colorful.html">Colorful</a></li>
+<li><a href="http://rawgithub.com/drygiel/xPanel/master/examples/white.html">White</a></li>
+</ul><h2>
+<a name="installation" class="anchor" href="#installation"><span class="octicon octicon-link"></span></a>Installation</h2>
+
+<ul>
+<li>Include the <a href="http://imakewebthings.com/jquery-waypoints/">waypoints</a> plugin.</li>
+<li>
+<p>Include the CSS stylesheet at the end of <strong>HEAD</strong> element:</p>
+
+<div class="highlight highlight-html"><pre><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"/path/to/xpanel.css"</span> <span class="nt">/&gt;</span>
+</pre></div>
+</li>
+<li>
+<p>Include the shortcut script at the end of <strong>BODY</strong> element:</p>
+
+<div class="highlight highlight-html"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"/path/to/waypoints-xpanel.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+</pre></div>
+</li>
+</ul><h2>
+<a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h2>
+
+<p>The most basic usage looks like this:</p>
+
+<div class="highlight highlight-js"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">'.container-of-panels'</span><span class="p">).</span><span class="nx">waypoint</span><span class="p">(</span><span class="s1">'xpanel'</span><span class="p">);</span>
+</pre></div>
+
+<p>It means that xPanel schortcut will be applied to all instances of .container-of-panels class. 
+Element with this class is trated as container for panels so it must contain some child elements to notice any effect.</p>
+
+<h2>
+<a name="how-it-works" class="anchor" href="#how-it-works"><span class="octicon octicon-link"></span></a>How it works</h2>
+
+<p>It adds additional class 'xpanel' to the container and 'scroll-down' &amp; 'scroll-down' depending on scroll directin at the time. Additionaly depending on your shortcut settings adds classes like 'shadow', 'dim' and 'reverse' too. 
+While scrolling child pannels gets class 'in' when panel is incoming into viewport and 'out' when it's outcoming. 
+Thats all what JS do. Rest of fun is made by CSS.</p>
+
+<h2>
+<a name="what-you-can-do" class="anchor" href="#what-you-can-do"><span class="octicon octicon-link"></span></a>What you can do</h2>
+
+<p>After applying the schortcut you can:</p>
+
+<ul>
+<li>
+<p>Destroy it:  </p>
+
+<div class="highlight highlight-js"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">'.container-of-panels'</span><span class="p">).</span><span class="nx">waypoint</span><span class="p">(</span><span class="s1">'xpanel'</span><span class="p">,</span> <span class="s1">'destroy'</span><span class="p">);</span>
+</pre></div>
+</li>
+<li>
+<p>Manually refresh it:  </p>
+
+<div class="highlight highlight-js"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">'.container-of-panels'</span><span class="p">).</span><span class="nx">waypoint</span><span class="p">(</span><span class="s1">'xpanel'</span><span class="p">,</span> <span class="s1">'refresh'</span><span class="p">);</span>
+</pre></div>
+</li>
+<li>
+<p>Change options of it:  </p>
+
+<div class="highlight highlight-js"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">'.container-of-panels'</span><span class="p">).</span><span class="nx">waypoint</span><span class="p">(</span><span class="s1">'xpanel'</span><span class="p">,</span> <span class="p">{</span>
+    <span class="nx">minHeightScale</span><span class="o">:</span> <span class="mf">1.05</span><span class="p">,</span>
+    <span class="nx">fixJumpyScrolling</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nx">reverse</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="nx">shadow</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nx">dim</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="nx">whenScrollDown</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nx">whenScrollUp</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+<span class="p">});</span>
+</pre></div>
+</li>
+</ul><h2>
+<a name="options" class="anchor" href="#options"><span class="octicon octicon-link"></span></a>Options</h2>
+
+<ul>
+<li><p><strong>minHeightScale</strong><br>
+Minimum height of panel in relation to viewport. 1 means 100% of viewport, 1.5 means 150% of viewport and so on.</p></li>
+<li><p><strong>fixJumpyScrolling</strong><br>
+Scrolling using mousewheel is not smooth in all browsers thus if you want avoid situation when incoming panels jumps into view leave this this option set to true.</p></li>
+<li><p><strong>reverse</strong><br>
+By default incoming panels appears in viewport below the outcvoming ones. If you want to apear them above, set it to true.</p></li>
+<li><p><strong>shadow</strong><br>
+Adds shadow to the panels.</p></li>
+<li><p><strong>dim</strong><br>
+Makes outoming panels darker.</p></li>
+<li><p><strong>whenScrollDown</strong><br>
+Enables plugin when scrolling down.</p></li>
+<li><p><strong>whenScrollUp</strong><br>
+Enables plugin when scrolling up.</p></li>
+</ul><p>If you to temporary disable shortcut set both opctions whenScrollDown &amp; whenScrollUp to false.</p>
+      </section>
+
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    
+  </body>
+</html>
