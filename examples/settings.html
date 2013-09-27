@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>xPanel - waypoints shortcut</title>
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="http://yandex.st/highlightjs/7.3/styles/default.min.css">
+    <link rel="stylesheet" href="../build/xpanel.min.css" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body,
+        html {
+            color: #2C2C2C;
+            font: 300 100% 'Lato', sans-serif;
+        }
+
+        header {
+            padding: 20px;
+            background-color: #2C2C2C;
+            color: #B1B1B1;
+        }
+
+            header #logo {
+                background: url(./xpanel-logo.png) 0 0 no-repeat;
+                min-height: 42px;
+                font-size: 2em;
+                font-weight: 200;
+                padding: 0 150px 0 53px;
+                margin: 20px 30px;
+                display: inline-block;
+                color: #2A71B3;
+                float: left;
+            }
+
+                header #logo > span {
+                    color: #FFF;
+                }
+
+            header fieldset {
+                border: none;
+                padding: 0 10px;
+                margin-bottom: 7px;
+                display: inline-block;
+            }
+
+                header fieldset legend {
+                    color: #00ADFF;
+                    text-transform: uppercase;
+                }
+
+            header input[type=button] {
+                padding: 5px 15px;
+                background-color: #383838;
+                border: 1px solid #2167C0;
+                color: #808080;
+                cursor: pointer;
+                float: right;
+            }
+
+                header input[type=button]:hover {
+                    background-color: #1F1F1F;
+                }
+
+        article {
+            font-size: 1.3em;
+            padding: 10% 20px;
+            font-weight: 200;
+            text-align: center;
+        }
+
+            article > div {
+                display: inline-block;
+                text-align: left;
+                max-width: 60%;
+            }
+
+            article h1 {
+                font-size: 3em;
+                font-weight: 700;
+                text-transform: uppercase;
+            }
+
+            article:nth-of-type(odd) {
+                background-color: #00AEFF;
+            }
+
+            article:nth-of-type(even) {
+                background-color: white;
+            }
+
+        .force-white > * {
+            background-color: white !important;
+        }
+
+        p {
+            line-height: 1.6em;
+        }
+
+        ul {
+            margin: 10px;
+        }
+
+            ul li {
+                list-style: none;
+                margin-left: 50px;
+            }
+
+        h2 {
+            margin-top: 25px;
+        }
+
+        a {
+            text-decoration: none;
+            display: inline-block;
+            color: white;
+        }
+
+            a:hover {
+                color: #03F;
+            }
+    </style>
+</head>
+<body>
+    <header>
+        <span id="logo"><span>x</span>Panel</span>
+        <fieldset>
+            <legend>Options:</legend>
+            <div>
+                <input type="checkbox" id="set_shadow" />
+                <label for="set_shadow">Shadow</label>
+            </div>
+            <div>
+                <input type="checkbox" id="set_reverse" checked="checked" />
+                <label for="set_reverse">Reverse</label>
+            </div>
+            <div>
+                <input type="checkbox" id="set_dim" checked="checked" />
+                <label for="set_dim">Dim</label>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend></legend>
+            <div>
+                <input type="checkbox" id="force_white" />
+                <label for="force_white">All panels white</label>
+            </div>
+            <div>
+                <input type="checkbox" id="set_up" />
+                <label for="set_up">On scroll up</label>
+            </div>
+            <div>
+                <input type="checkbox" id="set_down" checked="checked" />
+                <label for="set_down">On scroll down</label>
+            </div>
+        </fieldset>
+
+        <input type="button" value="Destroy" id="set_destroy" />
+    </header>
+
+    <div id="group-one">
+        <article>
+            <div>
+                <h1>What is this</h1>
+                <p>
+                    xPanel is waypoint shortcut used to create paralax effect while scrolling panels which you can see on this page.
+                <br />
+                    Just keep scrolling to see.
+                </p>
+                <h1>How to use it</h1>
+
+                <p>First include the CSS stylesheet at the end of HEAD element:</p>
+                <pre>
+                <code class="xml">&lt;link rel=&quot;stylesheet&quot; href=&quot;/path/to/xpanel.css&quot; /&gt;</code>
+            </pre>
+
+                <p>Then include the shortcut script at the end of BODY element:</p>
+                <pre>
+                <code class="xml">&lt;script src=&quot;/path/to/waypoints-xpanel.min.js&quot;&gt;&lt;/script&gt;</code>
+            </pre>
+
+                <p>The most basic usage looks like this:</p>
+                <pre>
+                <code class="js">$('.container-of-panels').waypoint('xpanel');</code>
+            </pre>
+
+                <p>
+                    It means that xPanel schortcut will be applied to all instances of .container-of-panels class.
+                <br />
+                    Element with this class is trated as container for panels so it must contain some child elements to notice any effect.
+                </p>
+            </div>
+        </article>
+
+        <article>
+            <div>
+                <h1>How it works</h1>
+                <p>
+                    It adds additional class 'xpanel' to the container and 'scroll-down' & 'scroll-down' depending on scroll directin at the time.
+                Additionaly depending on your shortcut settings adds classes like 'shadow', 'dim' and 'reverse' too.
+                <br />
+                    While scrolling child pannels gets class 'in' when panel is incoming into viewport and 'out' when it's outcoming.
+                <br />
+                    Thats all what JS do. Rest of fun is made by CSS.   
+                </p>
+
+
+            </div>
+        </article>
+
+        <article>
+            <div>
+                <h1>What you can do</h1>
+                <p>After applying the schortcut you can:</p>
+                <ul>
+                    <li>
+                        <p>Destroy it:</p>
+                        <pre>
+                    <code class="js">$('.container-of-panels').waypoint('xpanel', 'destroy');</code>
+                </pre>
+                    </li>
+
+                    <li>
+                        <p>Manually refresh it:</p>
+                        <pre>                 
+                    <code class="js">$('.container-of-panels').waypoint('xpanel', 'refresh');</code>
+                </pre>
+                    </li>
+
+                    <li>
+                        <p>Change options of it:</p>
+                        <pre>           
+                    <code class="js">$('.container-of-panels').waypoint('xpanel', {
+    minHeightScale: 1.05,
+    fixJumpyScrolling: true,
+    reverse: false,
+    shadow: true,
+    dim: false,
+    whenScrollDown: true,
+    whenScrollUp: true,
+});</code>
+                </pre>
+                    </li>
+                </ul>
+            </div>
+        </article>
+
+        <article>
+            <div>
+                <h1>Options</h1>
+                <ul>
+                    <li>
+                        <h2>minHeightScale</h2>
+                        <p>Minimum height of panel in relation to viewport. 1 means 100% of viewport, 1.5 means 150% of viewport and so on.</p>
+                    </li>
+                    <li>
+                        <h2>fixJumpyScrolling</h2>
+                        <p>Scrolling using mousewheel is not smooth in all browsers thus if you want avoid situation when incoming panels jumps into view leave this this option set to true.</p>
+                    </li>
+                    <li>
+                        <h2>reverse</h2>
+                        <p>By default incoming panels appears in viewport <b>below</b> the outcvoming ones. If you want to apear them above, set it to true.</p>
+                    </li>
+                    <li>
+                        <h2>shadow</h2>
+                        <p>Adds shadow to the panels.</p>
+                    </li>
+                    <li>
+                        <h2>dim</h2>
+                        <p>Makes outoming panels darker.</p>
+                    </li>
+                    <li>
+                        <h2>whenScrollDown</h2>
+                        <p>Enables plugin when scrolling down.</p>
+                    </li>
+                    <li>
+                        <h2>whenScrollUp</h2>
+                        <p>Enables plugin when scrolling up.</p>
+                    </li>
+                </ul>
+                If you to temporary disable shortcut set both opctions whenScrollDown & whenScrollUp to false.
+            </div>
+        </article>
+    </div>
+
+    <article>
+        <div>
+            <h2>Hope you like it.</h2>
+            <p>Check out <a href="http://imakewebthings.com/jquery-waypoints/" target="_blank">waypoints</a> plugin.</p>
+
+            <p><a href="#" id="go_top">Scroll Top</a> & change plugin options.</p>
+        </div>
+    </article>
+
+    <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+    <script src="http://yandex.st/highlightjs/7.3/highlight.min.js"></script>
+    <script src="./waypoints.min.js"></script>
+    <script src="../build/xpanel.js"></script>
+    <script>
+        (function () {
+
+            var $container = $('#group-one');
+
+            //____Settings______________________________________________
+
+            // Shadow
+            $('#set_shadow').click(function () {
+                $container.waypoint('xpanel', { shadow: this.checked });
+            });
+
+            // Reversed
+            $('#set_reverse').click(function () {
+                $container.waypoint('xpanel', { reverse: this.checked });
+            });
+
+            // Dim
+            $('#set_dim').click(function () {
+                $container.waypoint('xpanel', { dim: this.checked });
+            });
+
+            // Dim
+            $('#set_fixJumpyScrolling').click(function () {
+                $container.waypoint('xpanel', { fixJumpyScrolling: this.checked });
+            });
+
+            // Down
+            $('#set_down').click(function () {
+                $container.waypoint('xpanel', { whenScrollDown: this.checked });
+            });
+
+            // Up
+            $('#set_up').click(function () {
+                $container.waypoint('xpanel', { whenScrollUp: this.checked });
+            });
+
+            // Force white
+            $('#force_white').click(function () {
+                $container.toggleClass('force-white');
+            });
+
+            // Destroy
+            $('#set_destroy').click(function () {
+                $container.waypoint('xpanel', 'destroy');
+                $('header').slideUp(300);
+            });
+
+            // Scroll top
+            $('#go_top').click(function () {
+                $('html, body').animate({ scrollTop: 0 }, 800);
+                return false;
+            });
+
+            hljs.initHighlightingOnLoad();
+
+            $container.waypoint('xpanel', {
+                whenScrollUp: false,
+                shadow: false,
+                minHeightScale: 1.15,
+                reverse: true,
+                dim: true,
+            });
+        })();
+    </script>
+</body>
+</html>

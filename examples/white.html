@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>xPanel - waypoints shortcut</title>
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../build/xpanel.min.css" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body,
+        html {
+            color: #2C2C2C;
+            font: 300 100% 'Lato', sans-serif;
+        }
+
+        header {
+            padding: 20px;
+            background-color: #2C2C2C;
+            color: #B1B1B1;
+        }
+
+            header #logo {
+                background: url(./xpanel-logo.png) 0 0 no-repeat;
+                min-height: 42px;
+                font-size: 2em;
+                font-weight: 200;
+                padding: 0 150px 0 53px;
+                margin: 20px 30px;
+                display: inline-block;
+                color: #2A71B3;
+            }
+
+                header #logo > span {
+                    color: #FFF;
+                }
+
+
+        article {
+            font-size: 1.3em;
+            padding: 10% 20px;
+            font-weight: 200;
+            text-align: center;
+            background: white;
+        }
+
+            article > div {
+                display: inline-block;
+                text-align: left;
+                max-width: 60%;
+            }
+
+            article h1 {
+                font-size: 3em;
+                font-weight: 700;
+                text-transform: uppercase;
+                margin-bottom: 50px;
+            }
+
+        p {
+            line-height: 200%;
+            max-width: 50%;
+            text-align: left;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <span id="logo"><span>x</span>Panel</span>
+    </header>
+
+    <div id="group-one">
+        <article>
+            <h1>Lorem ipsum</h1>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit fusce vel sapien elit in malesuada semper mi, 
+                id sollicitudin urna fermentum ut fusce varius nisl ac ipsum gravida vel pretium tellus.
+            </p>
+        </article>
+
+        <article>
+            <h1>Dolor sit amet</h1>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit fusce vel sapien elit in malesuada semper mi, 
+                id sollicitudin urna fermentum ut fusce varius nisl ac ipsum gravida vel pretium tellus.
+            </p>
+        </article>
+
+        <article>
+            <h1>Consectetur</h1>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit fusce vel sapien elit in malesuada semper mi, 
+                id sollicitudin urna fermentum ut fusce varius nisl ac ipsum gravida vel pretium tellus.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit fusce vel sapien elit in malesuada semper mi, 
+                id sollicitudin urna fermentum ut fusce varius nisl ac ipsum gravida vel pretium tellus.
+            </p>
+        </article>
+
+        <article>
+            <h1>Dolor sit amet</h1>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit fusce vel sapien elit in malesuada semper mi, 
+                id sollicitudin urna fermentum ut fusce varius nisl ac ipsum gravida vel pretium tellus.
+            </p>
+        </article>
+    </div>
+
+    <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+    <script src="./waypoints.min.js"></script>
+    <script src="../build/xpanel.js"></script>
+    <script>
+        (function () {
+            $('#group-one').waypoint('xpanel', {
+                shadow: false,
+                minHeightScale: 1,
+                reverse: true,
+                dim: true,
+            });
+        })();
+    </script>
+</body>
+</html>
