@@ -1,4 +1,4 @@
-xPanel.js
+[xPanel.js](http://drygiel.github.io/xPanel)
 ======
 xPanel is waypoint shortcut used to create paralax effect while scrolling panels.
 
@@ -13,12 +13,12 @@ Here are a few examples:
 ## Installation
 
 - Include the [waypoints](http://imakewebthings.com/jquery-waypoints/) plugin.
-- Include the CSS stylesheet at the end of **HEAD** element:
+- Include the CSS stylesheet at the end of `<head>` element:
 
 	```html
 	<link rel="stylesheet" href="/path/to/xpanel.css" />
 	```            
-- Include the shortcut script at the end of **BODY** element:
+- Include the shortcut script at the end of `<body>` element:
 	
 	```html
 	<script src="/path/to/waypoints-xpanel.js"></script>
